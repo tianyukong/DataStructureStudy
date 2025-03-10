@@ -2,30 +2,15 @@
 #include <string>
 #include <format>
 #include "SeqList.h"
-int main()
-{
-    SeqList<double> list(10);
-    list.insert(1.1);
-    list.insert(2);
-    list.insert(3);
-    list.insert(4);
-    list.insert(5);
-    list.insert(6);
-    list.insert(7);
-    list.insert(8);
-    list.insert(9);
-    list.insert(10);
-    list.insert(11);
-    list.print();
-    list.remove(5);
-    list.print();
-    list.remove(11);
-    list.print();
-    list.remove(1);
-    list.print();
-    list.remove(10);
-    list.print();
-    list.remove(10);
-    list.print();
+#include "LinkedList.h"
+int main() {
+    LinkedList<int> list;
+    list.insert(10);  // 插入 10
+    list.insert(20);  // 插入 20
+    list.insert(30);  // 插入 30
+    list.insert(2,666);
+    list.print();     // 输出
+    list.remove(20);  // 删除 20
+    list.print();     // 输出
     return 0;
 }

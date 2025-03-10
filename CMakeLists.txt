@@ -6,7 +6,7 @@ project(Study)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-
+set(USE_ASAN 1)
 # 收集源文件
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 file(GLOB_RECURSE MAIN "test/*.cpp")

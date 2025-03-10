@@ -17,6 +17,7 @@ public:
     SeqList(int size);
     ~SeqList();
     int insert(T value);  // 参数类型改为 T
+    int insert(int pos, T value); 
     int remove(T value);
     void print();
 };
@@ -49,6 +50,31 @@ int SeqList<T>::insert(T value)  // 参数类型改为 T
     cout<<std::format("insert {} success", value)<<endl;
     return 0;    
 }
+
+
+template <typename T>
+int SeqList<T>::insert(int pos, T value)
+{
+    if (pos < 0 || pos > this->m_length)
+    {
+        cout<<std::format("error the position is invalid")<<endl;
+        return -1;
+    }
+    if (this->m_length == this->m_size)
+    {
+        cout<<std::format("error the list is full")<<endl;
+        return -1;
+    }
+    for (size_t i = this->m_length-1; i >= pos - 1; i--)
+    {
+        this->m_data[i+1] = this->m_data[i];
+    }
+    this->m_data[pos-1] = value;
+    this->m_length++;
+    cout<<std::format("insert {} success", value)<<endl;
+    return 0;
+} 
+
 
 template <typename T>
 int SeqList<T>::remove(T value)
